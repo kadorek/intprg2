@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sablon.master.cs" Inherits="OrnekSite.Sablon" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .header {
+            height:150px;
+            background-color:red;
+         
+        }
+        .ebat{
+            width:800px;
+
+        }
+        .content{
+            height:400px;
+        }
+        .footer{
+            height:150px;
+            background-color:aqua;
+        }
+        #menu{
+            float:left;
+            width:200px;
+            height:auto;
+            background-color:green;
+        }
+        #dinamik{
+            float:left;
+            background-color:orange;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="header ebat">BAŞLIK</div>
+        <div class="content ebat">
+            <div id="menu">
+                <ul type="none">
+                    <li><a>Anasayfa</a></li>
+                    <li><a>Hakkımda</a></li>
+                    <li><a>Arkadaşlarım</a></li>
+                    <li><a>Hobilerim</a></li>
+                    <li><a>İletişim</a></li>
+                </ul>
+            </div>
+            <div id="dinamik">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+        <div class="footer ebat">FOOTER</div>
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿body {
+}
+
+#ust {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-color: purple;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#menu {
+    float: left;
+    width: 30%;
+    background-color: wheat;
+    min-height: 200px;
+}
+
+#icerik {
+    width: 70%;
+    float: left;
+    background-color: aqua;
+    min-height: 200px;
+}

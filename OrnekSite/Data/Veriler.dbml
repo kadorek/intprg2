@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OrnekSiteDB" Class="VerilerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KADOREKPC;Initial Catalog=OrnekSiteDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OrnekSiteDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Resim" Member="Resims">
+    <Type Name="Resim">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="EklemeTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AktifMi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SabitBilgi" Member="SabitBilgis">
+    <Type Name="SabitBilgi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Kod" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Isim" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Deger" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AktifMi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Yazi" Member="Yazis">
+    <Type Name="Yazi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Baslik" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Metin" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AktifMi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EklemeTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Yazi_Yorum" Member="Yorums" ThisKey="ID" OtherKey="YaziID" Type="Yorum" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Yorum" Member="Yorums">
+    <Type Name="Yorum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Metin" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Mail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EklemeTarihi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AktifMi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="YaziID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Yazi_Yorum" Member="Yazi" ThisKey="YaziID" OtherKey="ID" Type="Yazi" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

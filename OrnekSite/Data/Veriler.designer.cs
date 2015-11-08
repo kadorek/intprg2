@@ -45,7 +45,7 @@ namespace OrnekSite.Data
     #endregion
 		
 		public VerilerDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["OrnekSiteDBConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["OrnekSiteDBConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

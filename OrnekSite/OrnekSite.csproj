@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +63,7 @@
     <Content Include="Admin\Yazi.aspx" />
     <Content Include="Admin\YaziEkle.aspx" />
     <Content Include="css\admin-main.css" />
+    <Content Include="Data\OrnekSiteDB.sql" />
     <Content Include="Hakkimda.aspx" />
     <Content Include="Sayfa1.aspx" />
     <Content Include="Sayfa2.aspx" />
@@ -96,6 +98,9 @@
     </Compile>
     <Compile Include="Admin\YaziEkle.aspx.designer.cs">
       <DependentUpon>YaziEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Veriler.cs">
+      <DependentUpon>Veriler.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\Veriler.designer.cs">
       <AutoGen>True</AutoGen>
